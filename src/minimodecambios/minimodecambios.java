@@ -2,16 +2,18 @@ package minimodecambios;
 
 import java.util.ArrayList;
 
+import javax.lang.model.util.ElementScanner14;
+
 public class minimodecambios {
     public static void main(String[] args) throws Exception {
         //randomizando las tiradas
-        int tirada1 = (int)(Math.random()*25+1);
-        int tirada2 = (int)(Math.random()*25+1);
+        int tirada1 = (int)(Math.random()*5+1);
+        int tirada2 = (int)(Math.random()*5+1);
         int lista_de_tiradas1[] = new int[tirada1];
         int lista_de_tiradas2[] = new int[tirada2];
         int cantNum1 [] = {0,0,0,0,0,0};
         int cantNum2 [] = {0,0,0,0,0,0};
-        int cambios, mayor, menor,sumal1 = 0,sumal2 = 0;
+        int diferencia = 0,cambios = 0, sumal1 = 0,sumal2 = 0;
 
 
         //Llenando las listas de tiradas
@@ -23,50 +25,48 @@ public class minimodecambios {
         }
 
         for(int i = 0;i < lista_de_tiradas1.length;i++){
-            int a = lista_de_tiradas1[i];
-            if(a==0){
-                cantNum1[0] += 1;
+            if(lista_de_tiradas1[i]==1){
+                cantNum1[0] = cantNum1[0] + 1;
             }
-            if(a==1){
-                cantNum1[1] += 1;
+            if(lista_de_tiradas1[i]==2){
+                cantNum1[1] = cantNum1[1] + 1;
             }
-            if(a==2){
-                cantNum1[2] += 1;
+            if(lista_de_tiradas1[i]==3){
+                cantNum1[2] = cantNum1[2] + 1;
             }
-            if(a==3){
-                cantNum1[3] += 1;
+            if(lista_de_tiradas1[i]==4){
+                cantNum1[3] = cantNum1[3] + 1;
             }
-            if(a==4){
-                cantNum1[4] += 1;
+            if(lista_de_tiradas1[i]==5){
+                cantNum1[4] = cantNum1[4] + 1;
             }
-            if(a==5){
-                cantNum1[5] += 1;
+            if(lista_de_tiradas1[i]==6){
+                cantNum1[5] = cantNum1[5] + 1;
             }
         }
            for(int i = 0;i < lista_de_tiradas2.length;i++){
-            int a = lista_de_tiradas2[i];
-            if(a==0){
-                cantNum2[0] += 1;
+            if(lista_de_tiradas2[i]==1){
+                cantNum2[0] = cantNum2[0] + 1;
             }
-            if(a==1){
-                cantNum2[1] += 1;
+            if(lista_de_tiradas2[i]==2){
+                cantNum2[1] = cantNum2[1] + 1;
             }
-            if(a==2){
-                cantNum2[2] += 1;
+            if(lista_de_tiradas2[i]==3){
+                cantNum2[2] = cantNum2[2] + 1;
             }
-            if(a==3){
-                cantNum2[3] += 1;
+            if(lista_de_tiradas2[i]==4){
+                cantNum2[3] = cantNum2[3] + 1;
             }
-            if(a==4){
-                cantNum2[4] += 1;
+            if(lista_de_tiradas2[i]==5){
+                cantNum2[4] = cantNum2[4] + 1;
             }
-            if(a==5){
-                cantNum2[5] += 1;
+            if(lista_de_tiradas2[i]==6){
+                cantNum2[5] = cantNum2[5] + 1;
             }
             }
 
 
-                //Muestro listas con sus respectiva cantidad de numeros iguales.
+            //Muestro listas con sus respectiva cantidad de numeros iguales.
 
             System.out.println("Lista nro1:");
             for(int i:lista_de_tiradas1){
@@ -104,5 +104,10 @@ public class minimodecambios {
         }
         System.out.println("Suma Lista 1: "+sumal1);
         System.out.println("Suma Lista 2: "+sumal2);
+        if(sumal1 == sumal2){
+            System.out.println("Hay que hacer 0 cambios");
+        }
+        System.out.println(diferencia);
+        System.out.println(cambios);
     }
- }
+}

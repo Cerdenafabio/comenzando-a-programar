@@ -15,6 +15,7 @@ public class tiradadoble {
             for(int i = 0; i <listaT2.length;i++){
                 listaT2[i] = (int)(Math.random()*6+1);
             }
+            //comprueba tiradas iguales
             for(int i = 0; i < tiradas;i++){
                 int l1,l2;
                 l1 = listaT1[i];
